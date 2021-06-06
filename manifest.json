@@ -1,0 +1,29 @@
+{
+    "name": "Screenshots",
+    "version": "0.0.1",
+    "description": "Take screenshots",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "desktopCapture",
+        "downloads",
+        "tabs"
+    ],
+    "action": {
+        "default_title": "Take a Screenshot"
+    },
+    "icons": {
+        "16": "/assets/icon-16.png",
+        "32": "/assets/icon-32.png",
+        "48": "/assets/icon-48.png",
+        "128": "/assets/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content_script.js"]
+        }
+    ]
+}
