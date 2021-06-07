@@ -15,7 +15,6 @@ chrome.action.onClicked.addListener(function (tab) {
 
 chrome.runtime.onMessage.addListener((message, sender, senderResponse) => {
     if (message.name === 'download' && message.url) {
-        console.log(message.url)
         chrome.downloads.download({
             filename: 'screenshot.png',
             url: message.url
